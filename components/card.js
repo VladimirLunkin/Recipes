@@ -14,12 +14,14 @@ export default function Card(props) {
       {recipe ? (
         <>
           <View style={{...styles.imgContainer, width: props.width - 48}}>
-            <Image style={styles.img} source={{uri: recipe.img}}/>
+            {recipe.img ? <Image style={styles.img} source={{uri: recipe.img}}/> : null}
           </View>
           <Text style={styles.title} >{recipe.name}</Text>
           <Text numberOfLines={3} ellipsizeMode={'tail'} style={styles.description} >{recipe.description}</Text>
           <View style={styles.ingredientsContainer} >
-            <Text style={styles.ingredientsTitle} >Ингредиенты</Text>
+            {recipe.ingredients && recipe.ingredients.length > 0 ?
+              <Text style={styles.ingredientsTitle} >Ингредиенты</Text>
+            : null}
             <ScrollView>
               {recipe.ingredients.map(({name, amount }, index) => (
                 <View style={styles.ingredientsLine} key={index}>
@@ -30,9 +32,11 @@ export default function Card(props) {
               ))}
             </ScrollView>
           </View>
-          <Pressable style={styles.more} >
-            <Text style={styles.moreLink} >Инструкция приготовления -></Text>
-          </Pressable>
+          {recipe.ingredients && recipe.ingredients.length > 0 ?
+            <Pressable style={styles.more} >
+              <Text style={styles.moreLink} >Инструкция приготовления -></Text>
+            </Pressable>
+            : null}
         </>
       ) : (
         <View style={styles.questionContainer}>

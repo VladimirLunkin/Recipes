@@ -42,21 +42,14 @@ export const recipes = [
     ],
   },
 
-  // {
-  //   name: '',
-  //   img: '',
-  //   description: '',
-  //   ingredients: [
-  //     {name: '', amount: ''},
-  //     {name: '', amount: ''},
-  //     {name: '', amount: ''},
-  //     {name: '', amount: ''},
-  //     {name: '', amount: ''},
-  //     {name: '', amount: ''},
-  //     {name: '', amount: ''},
-  //   ],
-  // },
-  //
+  {
+    name: 'Как ты нашла Артема в телеге?',
+    img: '',
+    description: '',
+    ingredients: [
+    ],
+  },
+
   // {
   //   name: '',
   //   img: '',
